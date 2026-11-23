@@ -1,0 +1,23 @@
+# CAMovies (Cam) - puesta en marcha
+
+# 1. Dependencias (ya no se necesitan torch / transformers / pysentimiento)
+pip install -r requirements.txt
+
+# 2. Claves: copia .env.ejemplo como .env y pon ahi tus dos valores
+#    (el .env esta en .gitignore, no se sube a GitHub)
+#    API key de TMDb: themoviedb.org -> Ajustes -> API -> "API Key (v3 auth)"
+copy .env.ejemplo .env
+
+# 3. Activar el entorno virtual ANTES de ejecutar
+#    (si usas el python del sistema da "No module named telegram")
+..\.venv\Scripts\Activate.ps1
+
+# 4. Ejecutar
+python bot.py
+
+# 5. Chequeo de la logica sin red
+python test_cam.py
+
+# OJO: python-telegram-bot 20.x NO sirve en Python 3.13+ -> requirements pide >=22.0
+
+# Comandos del bot: /start  /recomendar  /ayuda
